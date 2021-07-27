@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      - file: dbInit.sql
+      - relativeToChangelogFile: true
+  - include:
+      - file: dbInsertCrew.sql
+      - relativeToChangelogFile: true
+  - include:
+      - file: dbInsertPilots.sql
+      - relativeToChangelogFile: true
+  - include:
+      - file: dbInsertflights.sql
+      - relativeToChangelogFile: true

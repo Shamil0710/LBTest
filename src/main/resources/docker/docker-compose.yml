@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-123}
+      PGDATA: /data/postgres
+    volumes:
+#      - postgres:/data/postgres
+      - /var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+#    networks:
+#      - postgres
+    restart: unless-stopped
+  liquibase:
+    container_name: liquibase_container
+    image: liquibase/liquibase
+    environment: 
